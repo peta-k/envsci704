@@ -1,0 +1,25 @@
+---
+title: "My first Quarto document"
+author: "Peta Koloamatangi"
+format: html
+---
+
+## Hello, Quarto
+
+This is a paragraph of prose.
+
+::: {#01ec2289 .cell execution_count=1}
+``` {.python .cell-code}
+x = 2 + 2
+print(f"Two plus two is {x}")
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+Two plus two is 4
+```
+:::
+:::
+
+
+The number above was computed by Python and inserted here when I rendered the file.
