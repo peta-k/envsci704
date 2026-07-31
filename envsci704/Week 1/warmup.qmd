@@ -1,0 +1,95 @@
+---
+title: "Lab 1 warm-up"
+format: pdf
+---
+
+```{python}
+print("Hello World")
+```
+
+Part B: Python warm-up
+
+1. Variables and arithmetic:
+```{python}
+# Calculate the volume of a rectangular estuary (length x width x depth)
+length = 5000   # metres
+width = 800     # metres
+depth = 3.5     # metres
+volume = length * width * depth
+print(f"Estuary volume: {volume} m^3")
+```
+2. List and loops:
+```{python}
+# Simulate 10 days of exponential population growth
+population = 100
+rate = 0.05
+history = [population]
+
+for day in range(10):
+    population = population + rate * population
+    history.append(round(population, 1))
+
+print(history)
+```
+3. Functions:
+# Write a function that converts temperature from Celsius to Fahrenheit
+```{python}
+def celsius_to_fahrenheit(c):
+    return c * 9/5 + 32
+
+# Test it
+for temp in [0, 15, 25, 37]:
+    print(f"{temp}°C = {celsius_to_fahrenheit(temp)}°F")
+```
+Plotting:
+```{python}
+import matplotlib.pyplot as plt
+
+days = list(range(len(history)))
+plt.plot(days, history, "o-")
+plt.xlabel("Day")
+plt.ylabel("Population")
+plt.title("Exponential growth")
+plt.show()
+```
+
+Part C: Modelling preview
+```{python}
+# decay_rate = 0.1
+import matplotlib.pyplot as plt
+
+concentration = 100.0
+decay_rate = 0.1
+dt = 1.0
+history = [concentration]
+
+for day in range(60):
+    concentration = concentration - decay_rate * concentration * dt
+    history.append(concentration)
+
+plt.plot(history)
+plt.xlabel("Day")
+plt.ylabel("Concentration (mg/L)")
+plt.title("Tracer decay in a lake")
+plt.show()
+```
+
+```{python}
+# decay_rate = 0.01
+import matplotlib.pyplot as plt
+concentration = 100.0
+decay_rate = 0.01
+dt = 1.0
+history = [concentration]
+
+for day in range(60):
+    concentration = concentration - decay_rate * concentration * dt
+    history.append(concentration)
+
+plt.plot(history)
+plt.xlabel("Day")
+plt.ylabel("Concentration (mg/L)")
+plt.title("Tracer decay in a lake")
+plt.show()
+```
+A higher decay rate (eg.0.1) results in a faster decrease in concentration over time, while a lower decay rate (e.g 0.01) leads to a slower decrease. 
