@@ -1,5 +1,6 @@
+# ENVSCI 704 - Modelling of Environmental Systems
+# Author: Peta Koloamatangi
+# Date: 2026-07-27
 
-message = "ENVSCI 704: my environment works!"
-
-if __name__ == "__main__":
-	print(message)
+def main():
+    print("Hello from Python!")
